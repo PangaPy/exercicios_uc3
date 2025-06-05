@@ -1,8 +1,8 @@
 {% extends "base_template.html" %}
 
 {% block title %}
-    <title> Django - Exercícios </title>
-{% endblock %}    
+    <title>Django - Exercícios</title>
+{% endblock %}
 
 {% block menu %}
     <div class="collapse navbar-collapse justify-content-end" id="mynavbar">
@@ -12,25 +12,17 @@
             <a href="{% url 'tiposdeatividade:listar' %}" class="nav-link">Listar</a>
         </div>
     </div>
-{% endblock %}    
+{% endblock %}
 
 {% block corpo %}
-    <main class="container m-2 mx-auto my-font-family">
-
-        <div class="row">
-            <div class="col text-center m-0">
-                <h2 class="mt-2 mb-5 my-h2">Lista de Tipos de atividade</h2>
-            </div>
-        </div>
-
-
-    
+    <main class="container m-2 w-75 mx-auto my-font-family">
 
         <div class="row">
             <div class="col text-center m-0">
                 <h2 class="mt-2 mb-5 my-h2">Lista de Tipos de Atividade</h2>
             </div>
         </div>
+
 
         <!-- tabela responsiva -->
         <div class="table-responsive">

@@ -1,21 +1,20 @@
 {% extends "base_template.html" %}
 
 {% block title %}
-    <title> Django - Exercícios </title>
-{% endblock %}    
+    <title>Django - Exercícios</title>
+{% endblock %}
 
 {% block menu %}
     <div class="collapse navbar-collapse justify-content-end" id="mynavbar">
         <div class="navbar-nav">
             <a href="/" class="nav-link">Início</a>
-            <a href="{% url 'instrutor:cadastrar'%}" class="nav-link">Cadastrar</a>
+            <a href="{% url 'instrutor:cadastrar' %}" class="nav-link">Cadastrar</a>
             <a href="{% url 'instrutor:listar' %}" class="nav-link">Listar</a>
         </div>
     </div>
-{% endblock %}    
+{% endblock %}
 
 {% block corpo %}
-    
     <main class="container m-2 w-75 mx-auto my-font-family">
 
         <div class="row">

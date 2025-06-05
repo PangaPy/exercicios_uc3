@@ -1,28 +1,28 @@
 {% extends "base_template.html" %}
 
 {% block title %}
-   <title> Django - Exercícios</title>
-{% endblock %}  
- 
+    <title>Django - Exercícios</title>
+{% endblock %}
+
 {% block menu %}
     <div class="collapse navbar-collapse justify-content-end" id="mynavbar">
         <div class="navbar-nav">
             <a href="/" class="nav-link">Início</a>
-            <a href="{% url 'tiposdeatividade:cadastrar' %}" class="nav-link">Tipos de Atividade</a>
-            <a href="./titulo/cadastroTitulos.html" class="nav-link">Títulos</a>
+            <a href="{% url 'tiposdeatividade:cadastrar'%}" class="nav-link">Tipos de Atividade</a>
+            <a href="{% url 'titulo:cadastrar' %}" class="nav-link">Títulos</a>
             <a href="{% url 'aluno:cadastrar' %}" class="nav-link">Alunos</a>
             <a href="{% url 'instrutor:cadastrar' %}" class="nav-link">Instrutor</a>
-            <a href="./turma/cadastroTurma.html" class="nav-link">Turmas</a>
-            <a href="./contato/contato.html" class="nav-link">Contato</a>
+            <a href="{% url 'turma:cadastrar' %}" class="nav-link">Turmas</a>
+            <a href="{% url 'utilitarios:contato' %}" class="nav-link">Contato</a>
         </div>
     </div>
 {% endblock %}
 
-{% block titulo_pagina %}       
-        <div class="container text-center">
-            <div class="jumbotron mt-5">
-                <h1 class="display-4">Escola ABC do Saber</h1>
-            </div>
+{% block titulo_pagina %}
+    <div class="container text-center">
+        <div class="jumbotron mt-5">
+            <h1 class="display-4">Escola ABC do Saber</h1>
         </div>
-{% endblock %}    
-   
+    </div>
+{% endblock %}
+

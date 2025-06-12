@@ -62,7 +62,7 @@ def popular_tiposdeatividade():
 def popular_titulo():
     lista_titulo = []
 
-    for i in range(1,10):
+    for i in range(1, 10):
         titulo = Titulo(descricao='Titulo ' + f'{i:02}')
         lista_titulo.append(titulo)
 
@@ -91,37 +91,49 @@ def popular_instrutor():
     codigo_selecionado = gerar_numero_aleatorio_sequencia(lista_codigos_titulo)
     titulo = Titulo.objects.get(pk=codigo_selecionado)
 
-     print(lista_codigos_titulo)
-     print(codigo_selecionado)
-     print(titulo.codigo)
-     print(titulo.descricao)
+    # print(lista_codigos_titulo)
+    # print(codigo_selecionado)
+    # print(titulo.codigo)
+    # print(titulo.descricao)
 
     for i in range(1, 2):
         lista_instrutor.append(
             Instrutor(
                 nome = 'Instrutor ' + f'{i:02}',
                 data_nascimento =  gerar_data_aleatoria('nascimento'),
-                rg = 'RG' + f'{i:013}',           
-                ddd = f'{i:03}',                
+                rg = 'RG' + f'{i:013}',
+                #rg = 'RG' + (100000000000000 + i)
+                #rg = f'{gerar_numero_aleatorio_faixa(   9):015}',
+                telefone = f'{i:09}',
+                #telefone = 999999900 + i
+                #telefone = f'{gerar_numero_aleatorio_faixa(1, 99999999):09}',
+                ddd = f'{i:03}',
+                #ddd = 20 + i
+                #ddd = f'{gerar_numero_aleatorio_faixa(1, 60):03}',
                 codigo_titulo = titulo
             )
         )
 
-         inst = Instrutor(
-             nome = 'Instrutor ' + f'{i:02}',
-             data_nascimento =  gerar_data_aleatoria('nascimento'),
-             rg = 'RG' + f'{i:013}',        
-             telefone = f'{i:09}',        
-             ddd = f'{i:03}',       
-       
-             codigo_titulo = titulo
-         )
+        # inst = Instrutor(
+        #     nome = 'Instrutor ' + f'{i:02}',
+        #     data_nascimento =  gerar_data_aleatoria('nascimento'),
+        #     rg = 'RG' + f'{i:013}',
+        #     #rg = 'RG' + (100000000000000 + i)
+        #     #rg = f'{gerar_numero_aleatorio_faixa(   9):015}',
+        #     telefone = f'{i:09}',
+        #     #telefone = 999999900 + i
+        #     #telefone = f'{gerar_numero_aleatorio_faixa(1, 99999999):09}',
+        #     ddd = f'{i:03}',
+        #     #ddd = 20 + i
+        #     #ddd = f'{gerar_numero_aleatorio_faixa(1, 60):03}',
+        #     codigo_titulo = titulo
+        # )
 
-         print(inst.id)
-         print(inst.rg)
-         print(inst.data_nascimento)
-         print(inst.codigo_titulo.codigo)
-         print(inst.codigo_titulo.descricao)
+        # print(inst.id)
+        # print(inst.rg)
+        # print(inst.data_nascimento)
+        # print(inst.codigo_titulo.codigo)
+        # print(inst.codigo_titulo.descricao)
 
     Instrutor.objects.bulk_create(lista_instrutor)
 
